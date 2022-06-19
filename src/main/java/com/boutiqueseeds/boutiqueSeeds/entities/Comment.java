@@ -26,6 +26,8 @@ public class Comment {
 
     private Boolean approved;
 
+    private Long[] likes;
+
     public Long getId() {
         return id;
     }
@@ -72,5 +74,13 @@ public class Comment {
 
     public void setApproved(Boolean approved) {
         this.approved = approved;
+    }
+
+    public Long[] getLikes() {
+        return likes;
+    }
+
+    public void setLikes(Long[] like) {
+        this.likes = like;
     }
 }

@@ -123,5 +123,26 @@ public class CommentController {
         BeanUtils.copyProperties(comment, existingComment, "id");
         return commentRepo.saveAndFlush(existingComment);
     }
+
+    @RequestMapping(value = "/like/{commentId}/{userId}", method = RequestMethod.PUT)
+    public Comment updateLike(@PathVariable Long commentId, @PathVariable Long userId) {
+        Comment existingComment = commentRepo.getOne(commentId);
+        Long[] currentLikes = existingComment.getLikes();
+        List<Long> updatedLikes = new ArrayList<>();
+        Boolean addLikeToArray = true;
+        for (Long l : currentLikes) {
+            if (l.equals(userId)) {
+                addLikeToArray = false;
+            }
+            if (!l.equals(userId)) {
+                updatedLikes.add(l);
+            }
+        }
+        if (addLikeToArray == true) {
+            updatedLikes.add(userId);
+        }
+        existingComment.setLikes(updatedLikes.toArray(new Long[0]));
+        return commentRepo.saveAndFlush(existingComment);
+    }
 }
 
