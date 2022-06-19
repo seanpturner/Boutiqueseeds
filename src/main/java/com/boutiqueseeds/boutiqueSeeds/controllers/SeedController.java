@@ -109,4 +109,24 @@ public class SeedController {
         BeanUtils.copyProperties(seed, existingSeed, "id");
         return seedRepo.saveAndFlush(existingSeed);
     }
+
+    @RequestMapping(value = "/incrementCount/{seedId}/{qty}", method = RequestMethod.PUT)
+    public Seed incrementSeedCount(@PathVariable Long seedId, @PathVariable Integer qty) {
+        Seed existingSeed = seedRepo.getOne(seedId);
+        Integer seedCount = existingSeed.getQuantityAvailable();
+        seedCount = seedCount + qty;
+        existingSeed.setQuantityAvailable(seedCount);
+        return seedRepo.saveAndFlush(existingSeed);
+    }
+
+    @RequestMapping(value = "/decrementCount/{seedId}/{qty}", method = RequestMethod.PUT)
+    public Seed decrementSeedCount(@PathVariable Long seedId, @PathVariable Integer qty) {
+        Seed existingSeed = seedRepo.getOne(seedId);
+        Integer seedCount = existingSeed.getQuantityAvailable();
+        if (seedCount - qty >= 0) {
+            seedCount = seedCount - qty;
+            existingSeed.setQuantityAvailable(seedCount);
+        }
+        return seedRepo.saveAndFlush(existingSeed);
+    }
 }

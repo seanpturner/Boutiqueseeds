@@ -24,6 +24,8 @@ public class Seed {
     private Boolean feminized;
     private Boolean autoFlower;
 
+    private Boolean active;
+
     private BigDecimal price;
 
     public Long getId() {
@@ -112,5 +114,13 @@ public class Seed {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }

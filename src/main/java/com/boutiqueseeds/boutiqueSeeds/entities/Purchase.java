@@ -52,6 +52,14 @@ public class Purchase {
 
     private String purchaserName;
 
+    private Long orderStatus;
+
+    private LocalDate paymentDate;
+
+    private LocalDate orderPickedDate;
+
+    private LocalDate orderCancelledDate;
+
     public Long getId() {
         return id;
     }
@@ -194,5 +202,37 @@ public class Purchase {
 
     public void setPurchaserName(String purchaserName) {
         this.purchaserName = purchaserName;
+    }
+
+    public Long getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(Long orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public LocalDate getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(LocalDate paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
+    public LocalDate getOrderPickedDate() {
+        return orderPickedDate;
+    }
+
+    public void setOrderPickedDate(LocalDate orderPickedDate) {
+        this.orderPickedDate = orderPickedDate;
+    }
+
+    public LocalDate getOrderCancelledDate() {
+        return orderCancelledDate;
+    }
+
+    public void setOrderCancelledDate(LocalDate orderCancelledDate) {
+        this.orderCancelledDate = orderCancelledDate;
     }
 }
