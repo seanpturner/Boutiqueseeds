@@ -22,11 +22,9 @@ public class Purchase {
 
     private LocalDateTime purchaseDate;
 
-    private LineItem[] lineItems;
+    private Object[] lineItems;
 
-    private Extra[] extras;
-
-    private Boolean orderShipped;
+    private Object[] extras;
 
     private LocalDate shippedDate;
 
@@ -34,7 +32,7 @@ public class Purchase {
 
     private String trackingNumber;
 
-    private OrderNote[] orderNotes;
+    private Object[] orderNotes;
 
     private BigDecimal shippingFee;
 
@@ -84,28 +82,20 @@ public class Purchase {
         this.purchaseDate = purchaseDate;
     }
 
-    public LineItem[] getLineItems() {
+    public Object[] getLineItems() {
         return lineItems;
     }
 
-    public void setLineItems(LineItem[] lineItems) {
+    public void setLineItems(Object[] lineItems) {
         this.lineItems = lineItems;
     }
 
-    public Extra[] getExtras() {
+    public Object[] getExtras() {
         return extras;
     }
 
-    public void setExtras(Extra[] extras) {
+    public void setExtras(Object[] extras) {
         this.extras = extras;
-    }
-
-    public Boolean getOrderShipped() {
-        return orderShipped;
-    }
-
-    public void setOrderShipped(Boolean orderShipped) {
-        this.orderShipped = orderShipped;
     }
 
     public LocalDate getShippedDate() {
@@ -132,11 +122,11 @@ public class Purchase {
         this.trackingNumber = trackingNumber;
     }
 
-    public OrderNote[] getOrderNotes() {
+    public Object[] getOrderNotes() {
         return orderNotes;
     }
 
-    public void setOrderNotes(OrderNote[] orderNotes) {
+    public void setOrderNotes(Object[] orderNotes) {
         this.orderNotes = orderNotes;
     }
 

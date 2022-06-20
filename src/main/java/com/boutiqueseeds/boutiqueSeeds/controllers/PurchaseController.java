@@ -8,6 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +44,7 @@ public class PurchaseController {
         return userPurchases;
     }
     @GetMapping
-    @RequestMapping("/openPurchases")
+    @RequestMapping("/openpurchases")
     public List<Purchase> getOpenPurchases() {
         List<Purchase> purchaseList = purchaseRepo.findAll();
         List<Purchase> openPurchases = new ArrayList<>();
@@ -54,7 +57,43 @@ public class PurchaseController {
     }
 
     @GetMapping
-    @RequestMapping("/openPurchases/{id}")
+    @RequestMapping("/completedpurchasesbydaterange/{startYear}/{startMonth}/{startDay}/{endYear}/{endMonth}/{endDay}")
+    public List<Purchase> getCompletedPurchasesByDateRange(@PathVariable Integer startYear, @PathVariable Integer startMonth, @PathVariable Integer startDay, @PathVariable Integer endYear, @PathVariable Integer endMonth, @PathVariable Integer endDay) {
+        List<Purchase> purchaseList = purchaseRepo.findAll();
+        List<Purchase> closedPurchases = new ArrayList<>();
+        LocalDateTime sd = LocalDateTime.of(startYear, startMonth, startDay,0,0);
+        LocalDateTime ed = LocalDateTime.of(endYear, endMonth, endDay,23 ,59);
+        for (Purchase p : purchaseList) {
+            if (p.getOrderStatus().equals(Long.valueOf(200))) {
+                if (p.getPurchaseDate().isAfter(sd) || p.getPurchaseDate().isEqual(sd)) {
+                    if (p.getPurchaseDate().isBefore(ed) || p.getPurchaseDate().isEqual(ed)) {
+                        closedPurchases.add(p);
+                    }
+                }
+            }
+        }
+        return closedPurchases;
+    }
+
+    @GetMapping
+    @RequestMapping("/allpurchasesbydaterange/{startYear}/{startMonth}/{startDay}/{endYear}/{endMonth}/{endDay}")
+    public List<Purchase> getAllPurchasesByDateRange(@PathVariable Integer startYear, @PathVariable Integer startMonth, @PathVariable Integer startDay, @PathVariable Integer endYear, @PathVariable Integer endMonth, @PathVariable Integer endDay) {
+        List<Purchase> purchaseList = purchaseRepo.findAll();
+        List<Purchase> closedPurchases = new ArrayList<>();
+        LocalDateTime sd = LocalDateTime.of(startYear, startMonth, startDay,0,0);
+        LocalDateTime ed = LocalDateTime.of(endYear, endMonth, endDay,23 ,59);
+        for (Purchase p : purchaseList) {
+            if (p.getPurchaseDate().isAfter(sd) || p.getPurchaseDate().isEqual(sd)) {
+                if (p.getPurchaseDate().isBefore(ed) || p.getPurchaseDate().isEqual(ed)) {
+                    closedPurchases.add(p);
+                }
+            }
+        }
+        return closedPurchases;
+    }
+
+    @GetMapping
+    @RequestMapping("/openpurchases/{id}")
     public List<Purchase> getOpenPurchasesByUserId(@PathVariable Long id) {
         List<Purchase> purchaseList = purchaseRepo.findAll();
         List<Purchase> openCustomerPurchases = new ArrayList<>();
