@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity(name = "users")
@@ -19,20 +20,20 @@ public class User {
     private String fName;
     private String lName;
     private String email;
-
-    private String dateCreated;
+    private LocalDate dateCreated;
     private String birthDate;
     private Boolean active;
     private String accountType;
+    private String address1;
+    private String address2;
+    private String city;
+    private String state;
+    private String zip;
+    private String phone;
     private String businessName;
-    private String businessAddress1;
-    private String businessAddress2;
-    private String businessState;
-    private String businessZip;
     private String businessPhone;
     private String businessPhoneExt;
-    private String pricingStructure;
-
+    private Long pricingStructure;
     private Boolean salesTax;
 
     public Long getId() {
@@ -83,11 +84,11 @@ public class User {
         this.email = email;
     }
 
-    public String getDateCreated() {
+    public LocalDate getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(String dateCreated) {
+    public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
     }
 
@@ -115,44 +116,60 @@ public class User {
         this.accountType = accountType;
     }
 
+    public String getAddress1() {
+        return address1;
+    }
+
+    public void setAddress1(String address1) {
+        this.address1 = address1;
+    }
+
+    public String getAddress2() {
+        return address2;
+    }
+
+    public void setAddress2(String address2) {
+        this.address2 = address2;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getBusinessName() {
         return businessName;
     }
 
     public void setBusinessName(String businessName) {
         this.businessName = businessName;
-    }
-
-    public String getBusinessAddress1() {
-        return businessAddress1;
-    }
-
-    public void setBusinessAddress1(String businessAddress1) {
-        this.businessAddress1 = businessAddress1;
-    }
-
-    public String getBusinessAddress2() {
-        return businessAddress2;
-    }
-
-    public void setBusinessAddress2(String businessAddress2) {
-        this.businessAddress2 = businessAddress2;
-    }
-
-    public String getBusinessState() {
-        return businessState;
-    }
-
-    public void setBusinessState(String businessState) {
-        this.businessState = businessState;
-    }
-
-    public String getBusinessZip() {
-        return businessZip;
-    }
-
-    public void setBusinessZip(String businessZip) {
-        this.businessZip = businessZip;
     }
 
     public String getBusinessPhone() {
@@ -171,11 +188,11 @@ public class User {
         this.businessPhoneExt = businessPhoneExt;
     }
 
-    public String getPricingStructure() {
+    public Long getPricingStructure() {
         return pricingStructure;
     }
 
-    public void setPricingStructure(String pricingStructure) {
+    public void setPricingStructure(Long pricingStructure) {
         this.pricingStructure = pricingStructure;
     }
 

@@ -91,4 +91,12 @@ public class UserController {
         return userRepo.saveAndFlush(existingUser);
     }
 
+    @RequestMapping(value = "updatepasswordonly/{id}/{password}", method = RequestMethod.PUT)
+    public User updatePasswordOnly(@PathVariable Long id, @PathVariable String password) throws NoSuchAlgorithmException {
+        User existingUser = userRepo.getOne(id);
+        String hashedPassword = Secure.Hash(password);
+        existingUser.setPassword(hashedPassword);
+        return existingUser;
+    }
+
 }
