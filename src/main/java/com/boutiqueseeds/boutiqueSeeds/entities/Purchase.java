@@ -58,6 +58,20 @@ public class Purchase {
 
     private LocalDate orderCancelledDate;
 
+    private String deliveryAddress1;
+
+    private String deliveryAddress2;
+
+    private String deliveryNotes;
+
+    private String city;
+
+    private String state;
+
+    private String zip;
+
+    private Long pricingStructure;
+
     public Long getId() {
         return id;
     }
@@ -224,5 +238,61 @@ public class Purchase {
 
     public void setOrderCancelledDate(LocalDate orderCancelledDate) {
         this.orderCancelledDate = orderCancelledDate;
+    }
+
+    public String getDeliveryAddress1() {
+        return deliveryAddress1;
+    }
+
+    public void setDeliveryAddress1(String deliveryAddress1) {
+        this.deliveryAddress1 = deliveryAddress1;
+    }
+
+    public String getDeliveryAddress2() {
+        return deliveryAddress2;
+    }
+
+    public void setDeliveryAddress2(String deliveryAddress2) {
+        this.deliveryAddress2 = deliveryAddress2;
+    }
+
+    public String getDeliveryNotes() {
+        return deliveryNotes;
+    }
+
+    public void setDeliveryNotes(String deliveryNotes) {
+        this.deliveryNotes = deliveryNotes;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    public Long getPricingStructure() {
+        return pricingStructure;
+    }
+
+    public void setPricingStructure(Long pricingStructure) {
+        this.pricingStructure = pricingStructure;
     }
 }
