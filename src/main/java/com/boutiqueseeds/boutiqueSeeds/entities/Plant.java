@@ -17,6 +17,10 @@ public class Plant {
     private String[] notes;
     private Integer maternalLine;
     private Integer paternalLine;
+
+    private Integer mother;
+
+    private Integer father;
     private String sex;
     private Boolean clone;
     private String[] imageList;
@@ -63,6 +67,22 @@ public class Plant {
 
     public void setPaternalLine(Integer paternalLine) {
         this.paternalLine = paternalLine;
+    }
+
+    public Integer getMother() {
+        return mother;
+    }
+
+    public void setMother(Integer mother) {
+        this.mother = mother;
+    }
+
+    public Integer getFather() {
+        return father;
+    }
+
+    public void setFather(Integer father) {
+        this.father = father;
     }
 
     public String getSex() {
