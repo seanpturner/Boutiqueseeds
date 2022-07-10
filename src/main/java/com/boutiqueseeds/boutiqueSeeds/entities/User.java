@@ -21,7 +21,7 @@ public class User {
     private String lName;
     private String email;
     private LocalDate dateCreated;
-    private String birthDate;
+    private LocalDate birthDate;
     private Boolean active;
     private String accountType;
     private String address1;
@@ -92,11 +92,11 @@ public class User {
         this.dateCreated = dateCreated;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

@@ -24,6 +24,8 @@ public class PricingStructure {
 
     private Boolean active;
 
+    private Boolean freeShipping;
+
     public Long getId() {
         return id;
     }
@@ -78,5 +80,13 @@ public class PricingStructure {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Boolean getFreeShipping() {
+        return freeShipping;
+    }
+
+    public void setFreeShipping(Boolean freeShipping) {
+        this.freeShipping = freeShipping;
     }
 }

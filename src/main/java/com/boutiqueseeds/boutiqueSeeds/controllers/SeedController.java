@@ -62,7 +62,7 @@ public class SeedController {
         List<Seed> motherList = new ArrayList<>();
         for (Seed s : seedList) {
 
-            if (s.getMother().equalsIgnoreCase(mother)) {
+            if (s.getMother().equals(mother)) {
                 motherList.add(s);
             }
         }
@@ -76,7 +76,7 @@ public class SeedController {
         List<Seed> fatherList = new ArrayList<>();
         for (Seed s : seedList) {
 
-            if (s.getFather().equalsIgnoreCase(father)) {
+            if (s.getFather().equals(father)) {
                 fatherList.add(s);
             }
         }

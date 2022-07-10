@@ -16,17 +16,16 @@ public class Seed {
     private Long id;
     private String name;
     private String[] notes;
-    private String mother;
-    private String father;
+    private Long mother;
+    private Long father;
     private Integer quantityAvailable;
     private Integer maternalLine;
     private Integer paternalLine;
     private Boolean feminized;
     private Boolean autoFlower;
-
     private Boolean active;
-
     private BigDecimal price;
+    private String storageId;
 
     public Long getId() {
         return id;
@@ -52,19 +51,19 @@ public class Seed {
         this.notes = notes;
     }
 
-    public String getMother() {
+    public Long getMother() {
         return mother;
     }
 
-    public void setMother(String mother) {
+    public void setMother(Long mother) {
         this.mother = mother;
     }
 
-    public String getFather() {
+    public Long getFather() {
         return father;
     }
 
-    public void setFather(String father) {
+    public void setFather(Long father) {
         this.father = father;
     }
 
@@ -122,5 +121,13 @@ public class Seed {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public String getStorageId() {
+        return storageId;
+    }
+
+    public void setStorageId(String storageId) {
+        this.storageId = storageId;
     }
 }

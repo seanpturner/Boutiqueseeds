@@ -36,6 +36,10 @@ public class Discount {
 
     private LocalDate[] remindDate;
 
+    private Integer discountRate;
+
+    private Integer discountAmount;
+
     public Long getId() {
         return id;
     }
@@ -122,5 +126,21 @@ public class Discount {
 
     public void setRemindDate(LocalDate[] remindDate) {
         this.remindDate = remindDate;
+    }
+
+    public Integer getDiscountRate() {
+        return discountRate;
+    }
+
+    public void setDiscountRate(Integer discountRate) {
+        this.discountRate = discountRate;
+    }
+
+    public Integer getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public void setDiscountAmount(Integer discountAmount) {
+        this.discountAmount = discountAmount;
     }
 }

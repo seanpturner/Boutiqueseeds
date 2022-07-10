@@ -72,6 +72,8 @@ public class Purchase {
 
     private Long pricingStructure;
 
+    private String orderUser;
+
     public Long getId() {
         return id;
     }
@@ -294,5 +296,13 @@ public class Purchase {
 
     public void setPricingStructure(Long pricingStructure) {
         this.pricingStructure = pricingStructure;
+    }
+
+    public String getOrderUser() {
+        return orderUser;
+    }
+
+    public void setOrderUser(String orderUser) {
+        this.orderUser = orderUser;
     }
 }
