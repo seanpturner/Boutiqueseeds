@@ -16,4 +16,6 @@ public class Secure {
         generatedPassword = sb.toString();
         return generatedPassword;
     }
+
+
 }

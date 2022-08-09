@@ -74,6 +74,12 @@ public class Purchase {
 
     private String orderUser;
 
+    private String email;
+
+    private Long paymentType;
+
+    private String shippingMethod;
+
     public Long getId() {
         return id;
     }
@@ -304,5 +310,29 @@ public class Purchase {
 
     public void setOrderUser(String orderUser) {
         this.orderUser = orderUser;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Long getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(Long paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public String getShippingMethod() {
+        return shippingMethod;
+    }
+
+    public void setShippingMethod(String shippingMethod) {
+        this.shippingMethod = shippingMethod;
     }
 }

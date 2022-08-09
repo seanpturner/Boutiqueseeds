@@ -1,5 +1,7 @@
 package com.boutiqueseeds.boutiqueSeeds.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +9,7 @@ import javax.persistence.Id;
 import java.math.BigDecimal;
 
 @Entity(name = "pricingStructures")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class PricingStructure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +28,8 @@ public class PricingStructure {
     private Boolean active;
 
     private Boolean freeShipping;
+
+    private String[] requirements;
 
     public Long getId() {
         return id;
@@ -88,5 +93,13 @@ public class PricingStructure {
 
     public void setFreeShipping(Boolean freeShipping) {
         this.freeShipping = freeShipping;
+    }
+
+    public String[] getRequirements() {
+        return requirements;
+    }
+
+    public void setRequirements(String[] requirements) {
+        this.requirements = requirements;
     }
 }
