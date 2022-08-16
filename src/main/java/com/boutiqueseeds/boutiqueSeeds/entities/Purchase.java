@@ -80,6 +80,8 @@ public class Purchase {
 
     private String shippingMethod;
 
+    private String recordLocator;
+
     public Long getId() {
         return id;
     }
@@ -334,5 +336,13 @@ public class Purchase {
 
     public void setShippingMethod(String shippingMethod) {
         this.shippingMethod = shippingMethod;
+    }
+
+    public String getRecordLocator() {
+        return recordLocator;
+    }
+
+    public void setRecordLocator(String recordLocator) {
+        this.recordLocator = recordLocator;
     }
 }
