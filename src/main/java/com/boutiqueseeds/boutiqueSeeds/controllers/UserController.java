@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -154,6 +156,20 @@ public class UserController {
             }
         }
         return activeUsers;
+    }
+
+    @GetMapping
+    @RequestMapping("/nameHash")
+    public List<Map> getNameHash() {
+        List<User> users = userRepo.findAll();
+        List<Map> nameHashArray = new ArrayList<>();
+        for (User u : users) {
+            Map nameHash = new HashMap<>();
+            nameHash.put("userName", u.getUserName());
+            nameHash.put("userId", u.getId());
+            nameHashArray.add(nameHash);
+        }
+        return nameHashArray;
     }
 
     @CrossOrigin(origins="*")

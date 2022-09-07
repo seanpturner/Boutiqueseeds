@@ -23,7 +23,7 @@ public class Plant {
     private Integer father;
     private String sex;
     private Boolean clone;
-    private String[] imageList;
+    private String image;
 
 
 
@@ -101,11 +101,11 @@ public class Plant {
         this.clone = clone;
     }
 
-    public String[] getImageList() {
-        return imageList;
+    public String getImage() {
+        return image;
     }
 
-    public void setImageList(String[] imageList) {
-        this.imageList = imageList;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

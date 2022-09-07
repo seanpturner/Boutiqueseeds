@@ -2,10 +2,7 @@ package com.boutiqueseeds.boutiqueSeeds.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity(name="Messages")
@@ -25,6 +22,8 @@ public class Message {
 
     private LocalDateTime timestampArchived;
 
+    @Lob
+    @Column(columnDefinition = "CLOB")
     private String messageBody;
 
     private String messageSubject;
