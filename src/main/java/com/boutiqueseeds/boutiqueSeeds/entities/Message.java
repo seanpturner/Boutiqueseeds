@@ -23,7 +23,7 @@ public class Message {
     private LocalDateTime timestampArchived;
 
     @Lob
-    @Column(columnDefinition = "CLOB")
+//    @Column(columnDefinition = "CLOB")
     private String messageBody;
 
     private String messageSubject;
